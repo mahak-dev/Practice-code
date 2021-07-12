@@ -1,0 +1,31 @@
+<?php
+$servername="localhost";
+$username="root";
+$password="";
+$database_name="contact form";
+
+ if(empty($_post['submit']))
+  
+  {echo "form is not submited";
+   exit;
+  }
+
+ if(empty($_post["firstname"]) || empty($_post["lastname"]) || empty($_post["email"]))
+   
+{
+  echo "please fill the form";
+   exit;
+ }
+ 
+ $fname=$_post["firstname"];
+ $lname=$_post["lastname"];
+ $email=$_post["email"];
+ 
+$sql_query = "INSERT INTO contact form (fname, lname, email)
+ VALUES ('$fname, $lname, $email')";
+
+header('location: thank-you.html');
+
+
+?>
+
